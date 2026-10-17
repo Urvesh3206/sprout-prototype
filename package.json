@@ -1,0 +1,16 @@
+{
+  "name": "newtonite-operations-console",
+  "version": "1.0.0",
+  "description": "Newtonite Operations Under Pressure - High Integrity Operational Work Management Platform",
+  "scripts": {
+    "setup": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "test": "npm --prefix backend test",
+    "seed": "npm --prefix backend run seed"
+  },
+  "keywords": ["newtonite", "operations", "concurrency", "idempotency", "state-machine"],
+  "author": "Engineering Candidate",
+  "license": "ISC"
+}

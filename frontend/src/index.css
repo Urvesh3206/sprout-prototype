@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#F8FAFC] text-slate-900 min-h-screen selection:bg-emerald-600 selection:text-white antialiased transition-colors duration-200 font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.011em;
+  }
+
+  html.dark body {
+    @apply bg-[#0B0F17] text-slate-100 selection:bg-emerald-500 selection:text-slate-950;
+  }
+}
+
+/* Light Mode 3D Zero-Gravity Background (Crisp Off-White Workspace with Subtle 3D Levitating Island) */
+.light-sprout-bg {
+  background-color: #F8FAFC;
+  background-image: 
+    linear-gradient(rgba(248, 250, 252, 0.90), rgba(248, 250, 252, 0.95)),
+    url('/sprout-3d-bg.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background 0.3s ease;
+}
+
+/* Dark Mode 3D Zero-Gravity Background (Sleek Deep Slate Night with 3D Island & Coins) */
+html.dark .light-sprout-bg {
+  background-color: #0B0F17;
+  background-image: 
+    linear-gradient(rgba(11, 15, 23, 0.90), rgba(11, 15, 23, 0.95)),
+    url('/sprout-3d-bg.png');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Apple-style Frosted Light Glass Panels */
+.light-glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+html.dark .light-glass-panel {
+  background: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.4);
+}
+
+.light-glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.light-glass-card:hover {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 14px -1px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+html.dark .light-glass-card {
+  background: rgba(30, 41, 59, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .light-glass-card:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 18px -2px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.light-glass-input {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  transition: all 0.2s ease;
+}
+
+.light-glass-input:focus {
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  outline: none;
+}
+
+html.dark .light-glass-input {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #334155;
+  color: #F8FAFC;
+}
+
+html.dark .light-glass-input:focus {
+  border-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  outline: none;
+}
+
+/* 3D Depth & Perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.glass-3d-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 12px 36px -6px rgba(13, 58, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-3d-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow: 0 20px 45px -8px rgba(13, 58, 42, 0.12), 0 0 0 1px rgba(20, 155, 86, 0.3);
+}
+
+/* Zero-Gravity Floating Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(-0.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+  70% {
+    transform: translateY(6px) rotate(1.5deg);
+  }
+}
+
+@keyframes coinFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(8deg) scale(1.08);
+  }
+}
+
+.animate-robot-float {
+  animation: robotFloat 5s ease-in-out infinite;
+}
+
+.animate-coin-float {
+  animation: coinFloat 3.8s ease-in-out infinite;
+}
+
+/* Micro-interactions */
+* {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Sleek Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 58, 42, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 155, 86, 0.4);
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 211, 153, 0.4);
+}
