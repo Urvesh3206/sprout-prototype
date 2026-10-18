@@ -21,6 +21,8 @@ import {
   ChevronLeft
 } from 'lucide-react';
 
+import sproutHeroImg from '../assets/sprout-hero.jpg';
+
 interface SproutPrototypeProps {
   onBackToConsole: () => void;
 }
@@ -312,7 +314,7 @@ export const SproutPrototype: React.FC<SproutPrototypeProps> = ({ onBackToConsol
           <div className="w-full max-w-5xl mx-auto flex flex-col items-center animate-fadeIn">
             <div className="relative w-full rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-slate-950">
               <img 
-                src="/sprout-hero.jpg" 
+                src={sproutHeroImg} 
                 alt="Sprout Zero-Gravity Floating Hero Concept" 
                 className="w-full h-auto object-cover object-center max-h-[600px]"
               />

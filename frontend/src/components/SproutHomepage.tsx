@@ -14,6 +14,8 @@ import {
   Sliders
 } from 'lucide-react';
 
+import sproutHeroImg from '../assets/sprout-hero.jpg';
+
 interface SproutHomepageProps {
   onOpenOpsConsole: () => void;
 }
@@ -121,7 +123,7 @@ export const SproutHomepage: React.FC<SproutHomepageProps> = ({ onOpenOpsConsole
           
           {/* Base Mockup Image: Pixel-Perfect Reference Visual */}
           <img 
-            src="/sprout-hero.jpg" 
+            src={sproutHeroImg} 
             alt="Sprout Investing App Zero-Gravity Interface"
             className="w-full h-full object-cover object-center select-none"
           />
